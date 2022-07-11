@@ -1,5 +1,6 @@
 import datetime
 import requests
+import json
 
 today = datetime.datetime.now()
 date = today.strftime('%m/%d')
@@ -13,4 +14,14 @@ headers = {
 
 response = requests.get(url, headers=headers)
 data = response.json()
-print(data)
+
+
+json_string = json.dumps(data, indent = 4)
+#print json_string
+
+data = json.loads(json_string)
+
+
+
+
+
